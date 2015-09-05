@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='https://fonts.googleapis.com/css?family=Signika:300,400,600,700' rel='stylesheet' type='text/css'>
+<style type="text/css">
+	* { font-family: 'Signika', sans-serif; }
+	body {padding: 60px 0px 60px; background-color: #F8F8F8; }
+	h1 { font-size: 30px; font-weight: 400; display: inline; padding-left: 10px;}
+	h2 { font-size: 30px; font-weight: 300; padding: 0px 0px 30px 10px;}
+	.col {width: 650px; margin: 0 auto;}
+	.row {width: 300px; display: inline-block; border-top: 1px solid #ccc; padding-top: 25px; margin: 0px 20px 80px 0px; vertical-align: top; }
+	.chart { display: inline-block;}
+	.text { font-weight: 400; color: #333; line-height: 150%; padding-top: 5px;}
+	/* set arc path stroke to background color */
+	.pie path { stroke: #F8F8F8 !important }
+</style>
+<body>
+	<div class="col">
+		<h2>Fancy Charts</h2>
+		<div class="row">
+			<h1  id="pieText">92%</h1>
+			<div id="pieChart" class="chart pie" data-value="92"></div>
+			<div class="text">
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacinia non nisi a dignissim. Curabitur eget velit efficitur, scelerisque mauris eu, vehicula est.
+			</div>
+		</div>
+
+		<div class="row">
+			<h1 id="barVerticalText">24%</h1>
+			<div id="barChartVertical" class="chart bar" data-value="24"></div>
+			<div class="text">
+				Integer porttitor odio diam, sed vestibulum ipsum porttitor malesuada. Pellentesque placerat ut arcu a maximus.
+			</div>
+		</div>
+
+		<div class="row">
+			<h1 id="barVerticalRotateText">55%</h1>
+			<div id="barChartVerticalRotate" class="chart bar" data-value="55"></div>
+			<div class="text">
+				Sed dolor massa, eleifend sed nunc vitae, dictum molestie mauris. Nullam ac turpis vel diam blandit rhoncus sit amet in quam.
+			</div>
+		</div>
+
+		<div class="row">
+			<h1 id="barHorizontalText">78%</h1>
+			<div id="barChartHorizontal" class="chart bar" data-value="78"></div>
+			<div class="text">
+				Praesent rutrum iaculis accumsan. Vivamus non lectus suscipit, auctor nunc a, pretium enim.
+			</div>
+		</div>
+
+
+		<div class="row">
+			<h1 id="circleText">68%</h1>
+			<div id="circleChart" class="chart bar" data-value="68"></div>
+			<div class="text">
+				Praesent rutrum iaculis accumsan. Vivamus non lectus suscipit, auctor nunc a, pretium enim. Quisque vitae urna laoreet, faucibus lacus ut, facilisis dui.
+			</div>
+		</div>
+
+	</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="fancycharts.js"></script>
+<script>
+
+	// define colors so text can also be colored
+	var colors = ["#00ACE4", "#00D8A5", "#9b59b6", "#F1B719", "#e74c3c"];
+
+	// init Fancychart with Fancychart(width, height, colors, color_deactivated)
+	var chart = new Fancychart(200, 120, colors, '#e5e5e5');
+
+	// change color of text and init pie chart
+	document.getElementById('pieText').style.color = colors[0];
+	var val = document.getElementById("pieChart").getAttribute('data-value');
+	chart.donut("#pieChart", val, colors[0]);
+
+	document.getElementById('barVerticalText').style.color = colors[1];
+	var val = document.getElementById("barChartVertical").getAttribute('data-value');
+	chart.barVertical("#barChartVertical", val, colors[1]);
+
+	document.getElementById('barVerticalRotateText').style.color = colors[2];
+	var val = document.getElementById("barChartVerticalRotate").getAttribute('data-value');
+	chart.barVertical("#barChartVerticalRotate", val, colors[2], true);
+
+
+	document.getElementById('barHorizontalText').style.color = colors[3];
+	var val = document.getElementById("barChartHorizontal").getAttribute('data-value');
+	chart.barHorizontal("#barChartHorizontal", val, colors[3]);
+
+	document.getElementById('circleText').style.color = colors[4];
+	var val = document.getElementById("circleChart").getAttribute('data-value');
+	chart.circles("#circleChart", val, colors[4]);
+
+</script>
