@@ -1,0 +1,33 @@
+{
+  "name": "fancycharts",
+  "version": "0.9.0",
+  "description": "Fancycharts.js is a Javascript library to enhance a single percentag value with a fancy chart.",
+  "main": "fancycharts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:lint": "eslint fancycharts.js",
+    "dist:build": "uglifyjs -m -o fancycharts.min.js fancycharts.js"
+    
+  },
+  "main": "fancycharts.js",
+  "devDependencies": {
+    "mocha": "1.17.1",
+    "uglify": "latest",
+    "uglify-js": "latest",
+    "eslint": "^0.23.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahoiin/Fancycharts.js.git"
+  },
+  "keywords": [
+    "charts",
+    "d3"
+  ],
+  "author": "Sebastian Sadowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahoiin/Fancycharts.js/issues"
+  },
+  "homepage": "https://github.com/ahoiin/Fancycharts.js#readme"
+}
